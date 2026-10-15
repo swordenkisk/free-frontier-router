@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "free-frontier-router"
+version = "0.1.0"
+description = "A small command-line assistant for OpenRouter free models."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27,<1.0",
+    "python-dotenv>=1.0,<2.0",
+]
+
+[project.scripts]
+free-frontier = "free_frontier.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
